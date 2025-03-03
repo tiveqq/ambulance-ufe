@@ -23,7 +23,7 @@ export class KarunnyiAmbulanceWlList {
           estimatedDurationMinutes: 20,
           condition: 'Teploty'
       }, {
-          name: 'Ing. Ferdinand Treti',
+          name: 'Ing. Ferdinan Treti',
           patientId: '10028',
           estimatedStart: new Date(Date.now() + 5 * 60),
           estimatedDurationMinutes: 15,
