@@ -6,24 +6,100 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface KarunnyiAmbulanceWlApp {
+        "basePath": string;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "base-path"?: string;
+    }
+    interface KarunnyiAmbulanceWlEditor {
+        "entryId": string;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "entry-id"?: string;
+    }
     interface KarunnyiAmbulanceWlList {
     }
 }
+export interface KarunnyiAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLKarunnyiAmbulanceWlEditorElement;
+}
+export interface KarunnyiAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLKarunnyiAmbulanceWlListElement;
+}
 declare global {
+    interface HTMLKarunnyiAmbulanceWlAppElement extends Components.KarunnyiAmbulanceWlApp, HTMLStencilElement {
+    }
+    var HTMLKarunnyiAmbulanceWlAppElement: {
+        prototype: HTMLKarunnyiAmbulanceWlAppElement;
+        new (): HTMLKarunnyiAmbulanceWlAppElement;
+    };
+    interface HTMLKarunnyiAmbulanceWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLKarunnyiAmbulanceWlEditorElement extends Components.KarunnyiAmbulanceWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLKarunnyiAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLKarunnyiAmbulanceWlEditorElement, ev: KarunnyiAmbulanceWlEditorCustomEvent<HTMLKarunnyiAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLKarunnyiAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLKarunnyiAmbulanceWlEditorElement, ev: KarunnyiAmbulanceWlEditorCustomEvent<HTMLKarunnyiAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLKarunnyiAmbulanceWlEditorElement: {
+        prototype: HTMLKarunnyiAmbulanceWlEditorElement;
+        new (): HTMLKarunnyiAmbulanceWlEditorElement;
+    };
+    interface HTMLKarunnyiAmbulanceWlListElementEventMap {
+        "entry-clicked": string;
+    }
     interface HTMLKarunnyiAmbulanceWlListElement extends Components.KarunnyiAmbulanceWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLKarunnyiAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLKarunnyiAmbulanceWlListElement, ev: KarunnyiAmbulanceWlListCustomEvent<HTMLKarunnyiAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLKarunnyiAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLKarunnyiAmbulanceWlListElement, ev: KarunnyiAmbulanceWlListCustomEvent<HTMLKarunnyiAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLKarunnyiAmbulanceWlListElement: {
         prototype: HTMLKarunnyiAmbulanceWlListElement;
         new (): HTMLKarunnyiAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
+        "karunnyi-ambulance-wl-app": HTMLKarunnyiAmbulanceWlAppElement;
+        "karunnyi-ambulance-wl-editor": HTMLKarunnyiAmbulanceWlEditorElement;
         "karunnyi-ambulance-wl-list": HTMLKarunnyiAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
+    interface KarunnyiAmbulanceWlApp {
+        "basePath"?: string;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "base-path"?: string;
+    }
+    interface KarunnyiAmbulanceWlEditor {
+        "entryId"?: string;
+        /**
+         * @deprecated use camelCase instead. Support for dash-casing will be removed in Stencil v5.
+         */
+        "entry-id"?: string;
+        "onEditor-closed"?: (event: KarunnyiAmbulanceWlEditorCustomEvent<string>) => void;
+    }
     interface KarunnyiAmbulanceWlList {
+        "onEntry-clicked"?: (event: KarunnyiAmbulanceWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
+        "karunnyi-ambulance-wl-app": KarunnyiAmbulanceWlApp;
+        "karunnyi-ambulance-wl-editor": KarunnyiAmbulanceWlEditor;
         "karunnyi-ambulance-wl-list": KarunnyiAmbulanceWlList;
     }
 }
@@ -31,6 +107,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "karunnyi-ambulance-wl-app": LocalJSX.KarunnyiAmbulanceWlApp & JSXBase.HTMLAttributes<HTMLKarunnyiAmbulanceWlAppElement>;
+            "karunnyi-ambulance-wl-editor": LocalJSX.KarunnyiAmbulanceWlEditor & JSXBase.HTMLAttributes<HTMLKarunnyiAmbulanceWlEditorElement>;
             "karunnyi-ambulance-wl-list": LocalJSX.KarunnyiAmbulanceWlList & JSXBase.HTMLAttributes<HTMLKarunnyiAmbulanceWlListElement>;
         }
     }
