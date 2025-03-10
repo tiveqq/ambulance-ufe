@@ -13,6 +13,8 @@ export class KarunnyiAmbulanceWlApp {
   @State() private relativePath = "";
 
   @Prop() basePath: string="";
+  @Prop() apiBase: string;
+  @Prop() ambulanceId: string;
 
   componentWillLoad() {
     const baseUri = new URL(this.basePath, document.baseURI || "/").pathname;
@@ -55,7 +57,7 @@ export class KarunnyiAmbulanceWlApp {
         ? <karunnyi-ambulance-wl-editor entry-id={entryId}
             oneditor-closed={ () => navigate("./list")} >
           </karunnyi-ambulance-wl-editor>
-        : <karunnyi-ambulance-wl-list 
+        : <karunnyi-ambulance-wl-list ambulance-id={this.ambulanceId} api-base={this.apiBase}
             onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
           </karunnyi-ambulance-wl-list>
         }
